@@ -5,7 +5,7 @@
                 <h2 class="text-white font-weight-bold">Our Service</h2>
                 <ol class="breadcrumb">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="<?=base_url()?>">Home</a>
                     </li>
                     <li>Our Service</li>
                 </ol>

@@ -92,9 +92,9 @@
                                 Home
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="../index.html">Home Page 1</a>
-                                <a class="dropdown-item" href="../homepage-2.html">Home Page 2</a>
-                                <a class="dropdown-item" href="../homepage-3.html">Home Page 3</a>
+                                <a class="dropdown-item" href="<?=base_url()?>homepage/1">Home Page 1</a>
+                                <a class="dropdown-item" href="<?=base_url()?>homepage/2">Home Page 2</a>
+                                <a class="dropdown-item" href="<?=base_url()?>homepage/3">Home Page 3</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -132,7 +132,7 @@
                                 <a class="dropdown-item" href="../team-single.html">Team Single</a>
                                 <a class="dropdown-item" href="../404.html">404 Page</a>
                                 <a class="dropdown-item" href="../signup.html">Sign Up Page</a>
-                                <a class="dropdown-item" href="../login.html">Login Page</a>
+                                <a class="dropdown-item" href="<?=base_url('login') ?>">Login Page</a>
                                 <a class="dropdown-item" href="../comming-soon.html">Comming Soon Page</a>
                             </div>
                         </li>
@@ -181,12 +181,12 @@
         <i class="ti-close"></i>
     </a>
     <div class="container">
-        <form action="#" class="row">
+        <form method="post" id="search" name="search" action="<?= base_url('search') ?>" class="row">
             <div class="col-lg-10 mx-auto">
                 <h3>Search Here</h3>
                 <div class="input-wrapper">
-                    <input type="text" class="form-control" name="search" id="search" placeholder="Enter Keywords..." required>
-                    <button>
+                    <input type="text" class="form-control" name="searchtext" id="searchtext" placeholder="Enter Keywords..." required>
+                    <button type="submit">
                         <i class="ti-search"></i>
                     </button>
                 </div>

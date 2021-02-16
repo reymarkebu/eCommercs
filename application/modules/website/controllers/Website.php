@@ -18,6 +18,27 @@ class Website extends CI_Controller {
       $this->load->view('frontend/_layout_main', $this->data);
    }
 
+   public function search_details() {
+    $brand_name = $this->input->post('searchtext');
+    $brand_name = urldecode($brand_name);
+    $this->data['brand_name'] = $brand_name;
+    // Menu Info
+    $this->data['products'] = $this->Website_model->products();
+    // Body Information
+    $this->data['categorys'] = $this->Website_model->categorys($brand_name);
+    if($this->data['categorys']) {
+        // Load View
+        $this->data['subview'] = 'brand_details';
+        $this->load->view('frontend/_layout_main', $this->data);
+    } else {
+        $this->data['brands'] = $this->Common_model->get_data('brand');
+        $this->data['meta_title'] = 'Website';
+        $this->data['subview'] = 'search_details';
+        $this->load->view('frontend/_layout_main', $this->data);
+    }
+    
+   }
+
    public function brand_details($brand_name){
       $brand_name = urldecode($brand_name);
       $this->data['brand_name'] = $brand_name;

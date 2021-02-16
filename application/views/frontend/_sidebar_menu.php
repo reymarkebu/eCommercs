@@ -18,7 +18,7 @@
   $uri_segments = explode('/', $uri_path);
   if($uri_segments[2]=='brand'){
     $brand = urldecode($uri_segments[3]);
-  }elseif ($uri_segments[2]=='category') {
+  }elseif ($uri_segments[2]=='category') {      
     $brand = urldecode($uri_segments[3]);
     $cat = urldecode($uri_segments[4]);
   }elseif ($uri_segments[2]=='sub_category') {
@@ -85,14 +85,18 @@
               <p><?=$value3['sub_category_name']?></p>
             </a>
             <ul class="nav nav-treeview">
-              <?php foreach ($value3['items'] as $key4 => $value4) {?>
-              <li class="nav-item">
-                <a href="<?=base_url()?>item/<?=$value['brand_name']?>/<?=$value2['category_name']?>/<?=$value3['sub_category_name']?>/<?=$value4['model_no']?>" class="nav-link">
-                  <!-- <i class="far fa-dot-circle nav-icon"></i> -->
-                  <p><?=$value4['model_no']?></p>
-                </a>
-              </li>
-              <?php } ?>
+              <?php if($value3['items']) {?>
+                <?php foreach ($value3['items'] as $key4 => $value4) {?>
+                <li class="nav-item">
+                    <a href="<?=base_url()?>item/<?=$value['brand_name']?>/<?=$value2['category_name']?>/<?=$value3['sub_category_name']?>/<?=$value4['model_no']?>" class="nav-link">
+                    <!-- <i class="far fa-dot-circle nav-icon"></i> -->
+                    <p><?=$value4['model_no']?></p>
+                    </a>
+                </li>
+                <?php } ?>
+                <?php } else { ?>
+                    <label style="color:red;">No Item Found!</label>
+                    <?php } ?>
             </ul>
           </li>
           <?php } ?>
@@ -142,7 +146,7 @@
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- AdminLTE App -->
-<script src="<?=base_url()?>awedget/js/adminlte.js"></script>
+<!-- <script src="<?=base_url()?>awedget/js/adminlte.js"></script> -->
 
 <!-- AdminLTE for demo purposes -->
 <script src="<?=base_url();?>awedget/js/custom.js"></script>

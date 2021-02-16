@@ -212,5 +212,5 @@
 </section>
 
 <script type="text/javascript">
-    $('.carousel').carousel()
+        // $('.carousel').carousel();
 </script>

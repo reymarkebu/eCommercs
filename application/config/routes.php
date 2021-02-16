@@ -64,8 +64,12 @@ $route['forgot_password'] 		= 'auth/forgot_password';
 $route['change_password'] 		= 'auth/change_password';
 $route['logout'] 			    = 'auth/logout';
 
+$route['search'] 		        = 'website/search_details';
 $route['about/(:any)'] 			= 'site/article/$1';
 $route['brand/(:any)'] 			= 'website/brand_details/$1';
 $route['category/(:any)/(:any)'] = 'website/category_details/$1/$2';
 $route['sub_category/(:any)/(:any)/(:any)'] = 'website/sub_category_details/$1/$2/$3';
 $route['item/(:any)/(:any)/(:any)/(:any)']  = 'website/item_details/$1/$2/$3/$4';
+
+$route['homepage/(:num)'] 		        = 'website/homepage/homepages/$1';
+

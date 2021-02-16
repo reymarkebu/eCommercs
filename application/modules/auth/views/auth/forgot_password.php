@@ -32,7 +32,7 @@
         <a href="<?=base_url('login')?>">Login to my account</a>
       </p>
       <p class="mb-0">
-        <!-- <a href="<?=base_url('auth/create_user')?>" class="text-center">Register a new membership</a> -->
+        <a href="<?=base_url('auth/create_user')?>" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->
